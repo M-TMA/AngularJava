@@ -73,9 +73,9 @@
 <c:if test="${!empty listFilm}">
 	<table class="tg">
 	<tr>
-		<th width="80">film ID</th>
-		<th width="120">film Name</th>
-		<th width="120">film content</th>
+		<th width="80">Film ID</th>
+		<th width="120">Film Name</th>
+		<th width="120">Film content</th>
 		<th width="60">Edit</th>
 		<th width="60">Delete</th>
 	</tr>
