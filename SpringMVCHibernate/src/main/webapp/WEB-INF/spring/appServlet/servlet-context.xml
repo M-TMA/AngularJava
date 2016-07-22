@@ -40,7 +40,7 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.journaldev.spring.model.Film</beans:value>
+				<beans:value>com.journaldev.spring.model.Article</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -52,11 +52,11 @@
 		</beans:property>
 	</beans:bean>
 	
-	<beans:bean id="filmDAO" class="com.journaldev.spring.dao.FilmDAOImpl">
+	<beans:bean id="articleDAO" class="com.journaldev.spring.dao.ArticleDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	<beans:bean id="filmService" class="com.journaldev.spring.service.FilmServiceImpl">
-		<beans:property name="filmDAO" ref="filmDAO"></beans:property>
+	<beans:bean id="articleService" class="com.journaldev.spring.service.ArticleServiceImpl">
+		<beans:property name="articleDAO" ref="articleDAO"></beans:property>
 	</beans:bean>
 	<context:component-scan base-package="com.journaldev.spring" />
 	

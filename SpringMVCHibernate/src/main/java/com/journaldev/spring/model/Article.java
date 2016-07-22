@@ -14,8 +14,8 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "FILM2")
-public class Film {
+@Table(name = "ARTICLE")
+public class Article {
 
 	@Id
 	@Column(name = "id")
@@ -23,6 +23,12 @@ public class Film {
 	private int id;
 
 	private String title;
+
+	private String subContent;
+
+	private String time;
+
+	private String category;
 
 	private String content;
 
@@ -58,6 +64,30 @@ public class Film {
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+
+	public String getSubContent() {
+		return subContent;
+	}
+
+	public void setSubContent(String subContent) {
+		this.subContent = subContent;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	@Override
