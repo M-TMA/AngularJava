@@ -120,10 +120,10 @@
 				</div>
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="<c:url value='/articles'/>">Home</a></li>
-					<li><a href="<c:url value='/articles/dep'/>">Đẹp +</a></li>
-					<li><a href="#">Sức Khỏe</a></li>
-					<li><a href="#">Thế Giới</a></li>
-					<li><a href="#">Giáo Dục</a></li>
+					<li><a href="<c:url value='/articles/Healthy'/>">Healthy</a></li>
+					<li><a href="<c:url value='/articles/Knowledge Fam'/>">Knowledge Fam</a></li>
+					<li><a href="<c:url value='/articles/World'/>">World</a></li>
+					<li><a href="<c:url value='/articles/Asia Film'/>">Asia Film</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -135,14 +135,15 @@
 				<div class="row">
 					<c:forEach items="${listArticle}" var="article">
 						<div class="col-md-2">
-							<a href="#" class="thumbnail"> <img
+							<a href="<c:url value='/detail/${article.id}'/>" class="thumbnail"> <img
 							src="${article.img}"
 							alt="">
-							</a> <span class="date">${article.time}</span>
+							</a>
+							 <span class="date">${article.time}</span>
 							<div class="category">
 								<a href="#">${article.category}</a>
 							</div>
-							<span class="title"><a href="#">${article.title}</a></span>
+							<span class="title"><a href="<c:url value='/articles/${article.id}'/>">${article.title}</a></span>
 							<p class="quick-content">${article.subContent}</p>
 						</div>
 					</c:forEach>

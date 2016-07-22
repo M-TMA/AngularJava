@@ -17,7 +17,7 @@ public class ArticleController {
 
 	private ArticleService articleService;
 
-	//Using autowired to set ArticleService here
+	// Using autowired to set ArticleService here
 	@Autowired(required = true)
 	@Qualifier(value = "articleService")
 	public void setArticleService(ArticleService ar) {
@@ -32,9 +32,11 @@ public class ArticleController {
 	}
 
 	@RequestMapping(value = "/articles/{category}", method = RequestMethod.GET)
-	public String listArticleByCategory(@PathVariable("category") String category, Model model) {
+	public String listArticleByCategory(
+			@PathVariable("category") String category, Model model) {
 		model.addAttribute("article", new Article());
-		model.addAttribute("listArticle", this.articleService.listArticleByCategory(category));
+		model.addAttribute("listArticle",
+				this.articleService.listArticleByCategory(category));
 		return "index"; // name of jsp file
 	}
 
@@ -69,4 +71,9 @@ public class ArticleController {
 		return "index"; // name of jsp file
 	}
 
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public String getDetailArticelById(@PathVariable("id") int id, Model model) {
+		model.addAttribute("article",  this.articleService.getArticleById(id));
+		return "detail_article"; // name of jsp file
+	}
 }
