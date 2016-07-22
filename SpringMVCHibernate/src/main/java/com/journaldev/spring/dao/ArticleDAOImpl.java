@@ -39,7 +39,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 	@Override
 	public List<Article> listArticle() {
 		Session session = this.sessionFactory.getCurrentSession();
-		List<Article> ArticlesList = session.createQuery("from Article").list();
+		List<Article> ArticlesList = session.createQuery("from Article a ORDER BY a.time").list();
 		for(Article p : ArticlesList){
 			logger.info("Article List::"+p);
 		}

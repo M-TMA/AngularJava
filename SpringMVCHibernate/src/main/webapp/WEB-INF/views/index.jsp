@@ -78,6 +78,22 @@
 	height: 154px;
 }
 
+ .thumbnail:hover .mauvang {
+	opacity:0.4;
+	top:11px;
+}
+
+.mauvang {
+    background-color: yellow;
+    position: absolute;
+    top: 11px;
+    opacity: 0;
+    height: 155px;
+    width: 149px;
+    margin-left: 0px;
+    transition: all ease 0.9s;
+    
+}
 .jumbotron {
     padding-right: 60px;
     padding-left: 60px;
@@ -138,6 +154,7 @@
 							<a href="<c:url value='/detail/${article.id}'/>" class="thumbnail"> <img
 							src="${article.img}"
 							alt="">
+							<div class = "mauvang"> </div>
 							</a>
 							 <span class="date">${article.time}</span>
 							<div class="category">
