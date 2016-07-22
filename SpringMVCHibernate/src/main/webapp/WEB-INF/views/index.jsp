@@ -37,6 +37,7 @@
         border: solid 1px;
         background-color: cornflowerblue;
         color: white;
+        font-size: 12px;
     }
     .category {
         text-transform: uppercase;
@@ -47,6 +48,7 @@
     }
     .category a {
         color: brown;
+        margin-left: -9px;
     }
     .col-md-2 {
         border: solid 1px #acb6bf;
@@ -116,8 +118,8 @@
 					<a class="navbar-brand" href="#">Báo Mới</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Thể Thao</a></li>
+					<li class="active"><a href="<c:url value='/articles'/>">Home</a></li>
+					<li><a href="<c:url value='/articles/dep'/>">Đẹp +</a></li>
 					<li><a href="#">Sức Khỏe</a></li>
 					<li><a href="#">Thế Giới</a></li>
 					<li><a href="#">Giáo Dục</a></li>
@@ -127,8 +129,8 @@
 	</div>
 	<div class="content">
 		<div class="container">
-			<c:forEach items="${listArticle}" var="article" varStatus="loop">
-			<c:if test="${(loop.index+1) % 6==0}">
+			<!-- c:forEach items="${listArticle}" var="article" varStatus="loop"-->
+			<!-- c:if test="${(loop.index+1) % 6==0}"-->
 				<div class="row">
 					<c:forEach items="${listArticle}" var="article">
 						<div class="col-md-2">
@@ -144,8 +146,8 @@
 						</div>
 					</c:forEach>
 				</div>
-			</c:if>
-			</c:forEach>
+			<!--  /c:if-->
+			<!--  /c:forEach-->
 			
 		</div>
 	</div>

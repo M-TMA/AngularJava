@@ -15,4 +15,6 @@ public interface ArticleDAO {
 	public Article getArticleById(int id);
 
 	public void removeArticle(int id);
+	
+	public List<Article>  listArticleByCategory(String category);
 }

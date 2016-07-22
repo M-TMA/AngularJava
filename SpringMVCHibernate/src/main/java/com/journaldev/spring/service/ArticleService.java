@@ -15,5 +15,7 @@ public interface ArticleService {
 	public Article getArticleById(int id);
 
 	public void removeArticle(int id);
+	
+	public List<Article>  listArticleByCategory(String category);
 
 }

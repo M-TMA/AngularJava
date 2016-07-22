@@ -64,4 +64,14 @@ public class ArticleDAOImpl implements ArticleDAO {
 		logger.info("Article deleted successfully, Article details="+p);
 	}
 
+	@Override
+	public List<Article>  listArticleByCategory(String category) {
+		Session session = this.sessionFactory.getCurrentSession();
+		List<Article> ArticlesList = session.createQuery("from Article a WHERE a.category ='" + category+"'").list();
+		for(Article p : ArticlesList){
+			logger.info("Article List::"+p);
+		}
+		return ArticlesList;
+	}
+
 }

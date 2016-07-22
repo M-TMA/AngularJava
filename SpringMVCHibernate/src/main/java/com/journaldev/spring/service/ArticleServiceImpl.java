@@ -47,4 +47,10 @@ public class ArticleServiceImpl implements ArticleService {
 		this.ArticleDAO.removeArticle(id);
 	}
 
+	@Override
+	@Transactional
+	public List<Article>  listArticleByCategory(String category) {
+		return this.ArticleDAO.listArticleByCategory(category);
+	}
+
 }

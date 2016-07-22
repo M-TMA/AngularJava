@@ -17,6 +17,7 @@ public class ArticleController {
 
 	private ArticleService articleService;
 
+	//Using autowired to set ArticleService here
 	@Autowired(required = true)
 	@Qualifier(value = "articleService")
 	public void setArticleService(ArticleService ar) {
@@ -27,6 +28,13 @@ public class ArticleController {
 	public String listArticle(Model model) {
 		model.addAttribute("article", new Article());
 		model.addAttribute("listArticle", this.articleService.listArticle());
+		return "index"; // name of jsp file
+	}
+
+	@RequestMapping(value = "/articles/{category}", method = RequestMethod.GET)
+	public String listArticleByCategory(@PathVariable("category") String category, Model model) {
+		model.addAttribute("article", new Article());
+		model.addAttribute("listArticle", this.articleService.listArticleByCategory(category));
 		return "index"; // name of jsp file
 	}
 
@@ -43,21 +51,22 @@ public class ArticleController {
 		}
 
 		return "redirect:/articles"; // redirect to @RequestMapping(value =
-									// "/articles", method = RequestMethod.GET)
+										// "/articles", method =
+										// RequestMethod.GET)
 
 	}
 
 	@RequestMapping("/remove/{id}")
-	public String removearticle(@PathVariable("id") int id) {
+	public String removeArticle(@PathVariable("id") int id) {
 		this.articleService.removeArticle(id);
 		return "redirect:/articles";
 	}
 
 	@RequestMapping("/edit/{id}")
-	public String editPerson(@PathVariable("id") int id, Model model) {
+	public String editArticle(@PathVariable("id") int id, Model model) {
 		model.addAttribute("article", this.articleService.getArticleById(id));
 		model.addAttribute("listArticle", this.articleService.listArticle());
-		return "article"; // name of jsp file
+		return "index"; // name of jsp file
 	}
 
 }
