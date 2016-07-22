@@ -68,8 +68,8 @@
     margin-top: 5px;
 }
     .title a {
-        font-size: 12px;
-        text-transform: uppercase;
+    font-size: 10px;    
+    text-transform: uppercase;
     }
     
     .thumbnail a > img, .thumbnail > img {
@@ -105,6 +105,7 @@
     -webkit-transition: border .2s ease-in-out;
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
+    margin-top: 7px;
 }
 
 </style>
