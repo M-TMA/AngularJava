@@ -1,7 +1,11 @@
 package com.journaldev.spring;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,6 +28,29 @@ public class ArticleController {
 		this.articleService = ar;
 	}
 
+	//-------------------Retrieve All Users--------------------------------------------------------
+//    @RequestMapping(value = "/load", method = RequestMethod.GET)
+//    public List<Article> listAllArticle() {
+//        List<Article> articles = articleService.listArticle();
+//        return articles;
+//    }
+	
+	 //-------------------Retrieve All Users--------------------------------------------------------
+    
+    @RequestMapping(value = "/load", method = RequestMethod.GET)
+    public ResponseEntity<List<Article>> listAllUsers() {
+        List<Article> articles = articleService.listArticle();
+        if(articles.isEmpty()){
+            return new ResponseEntity<List<Article>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<List<Article>>(articles, HttpStatus.OK);
+    }
+    
+//    @RequestMapping(value = "/load", method = RequestMethod.GET)
+//    public @ResponseBody String find() {
+//        return articleService.listArticle().toString();
+//    }
+	
 	@RequestMapping(value = "/articles", method = RequestMethod.GET)
 	public String listArticle(Model model) {
 		model.addAttribute("article", new Article());

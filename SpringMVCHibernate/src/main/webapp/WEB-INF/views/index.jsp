@@ -2,7 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
- <%@ page language="java" contentType="text/html; charset=UTF-8" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" %> 
  
 <html lang="en">
 <head>
@@ -132,7 +132,7 @@
 </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="ArticleController as ar">
 	<div class="header">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -140,44 +140,37 @@
 					<a class="navbar-brand" href="#">Báo Mới</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="<c:url value='/articles'/>">Home</a></li>
-					<li><a href="<c:url value='/articles/Healthy'/>">Healthy</a></li>
-					<li><a href="<c:url value='/articles/Knowledge Fam'/>">Knowledge Fam</a></li>
-					<li><a href="<c:url value='/articles/World'/>">World</a></li>
-					<li><a href="<c:url value='/articles/Asia Film'/>">Asia Film</a></li>
+					<li class="active"><a href="">Home</a></li>
+					<li><a href="" ng-click="">Healthy</a></li>
+					<li><a href="">Knowledge Fam</a></li>
+					<li><a href="">World</a></li>
+					<li><a href="">Asia Film</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
 	<div class="content">
 		<div class="container">
-			<!-- c:forEach items="${listArticle}" var="article" varStatus="loop"-->
-			<!-- c:if test="${(loop.index+1) % 6==0}"-->
 				<div class="row">
-					<c:forEach items="${listArticle}" var="article">
-						<div class="col-md-3">
-							<a href="<c:url value='/detail/${article.id}'/>" class="thumbnail"> <img
-							src="${article.img}"
-							alt="">
+					<div class="col-md-3" ng-repeat="article in ar.Articles">
+							<a href="" class="thumbnail"> 
+							<img ng-src="{{article.img}}" alt="">
 							<div class = "mauvang"> </div>
 							</a>
-							 <span class="date">${article.time}</span>
+							 <span class="date">{{article.time}}</span>
 							<div class="category">
-								<a href="#">${article.category}</a>
+								<a href="#">{{article.category}}</a>
 							</div>
-							<div class="title"><a href="<c:url value='/detail/${article.id}'/>">${article.title}</a></div>
-							<p class="quick-content">${article.subContent}</p>
-						</div>
-					</c:forEach>
+							<div class="title"><a href="">{{article.title}}</a></div>
+							<p class="quick-content">{{article.subContent}}</p>
+					</div>
 				</div>
-			<!--  /c:if-->
-			<!--  /c:forEach-->
-			
 		</div>
 	</div>
 	<div class="footer"></div>
 
 </body>
-
-
+  	  <script src="<c:url value='/static/js/app.js' />"></script>
+      <script src="<c:url value='/static/js/service/article_service.js' />"></script>
+      <script src="<c:url value='/static/js/controller/article_controller.js' />"></script>
 </html>
