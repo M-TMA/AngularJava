@@ -15,8 +15,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
 <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.0.js"></script>
 
-<link rel="stylesheet" href="C:\xampp\htdocs\BaoMoi\css\style.css">
-<script src="../js/controller/action-menu.js"></script>
 <meta charset="UTF-8">
 
 <title>Báo Mới</title>
