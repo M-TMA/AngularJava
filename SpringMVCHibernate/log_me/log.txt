@@ -1,0 +1,2 @@
+24/7/2016:
+1/ Support Hibernate for angular ajax when get response data ERROR -> https://github.com/FasterXML/jackson-datatype-hibernate

@@ -3,7 +3,6 @@
 App.factory('ArticleService', ['$http', '$q', function($http, $q){
 debugger;
 	return {
-		
 			fetchAllArticles: function() {
 					return $http.get('http://192.168.1.7:8080/SpringMVCHibernate/load')
 							.then(
@@ -54,7 +53,32 @@ debugger;
 										return $q.reject(errResponse);
 									}
 							);
-			}
+			},
+			
+			listArticlesByCategory: function(category){
+				return $http.get('http://192.168.1.7:8080/SpringMVCHibernate/articleBy/'+category)
+						.then(
+								function(response){
+									return response.data;
+								}, 
+								function(errResponse){
+									console.error('Error while get Detail Category');
+									return $q.reject(errResponse);
+								}
+						);
+		},
+		getDetailArticleById: function(id){
+			return $http.get('http://192.168.1.7:8080/SpringMVCHibernate/detailBy/'+id)
+					.then(
+							function(response){
+								return response.data;
+							}, 
+							function(errResponse){
+								console.error('Error while get Detail Category');
+								return $q.reject(errResponse);
+							}
+					);
+	}
 		
 	};
 

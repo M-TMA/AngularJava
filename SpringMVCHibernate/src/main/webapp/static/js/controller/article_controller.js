@@ -83,5 +83,29 @@ App.controller('ArticleController', ['$scope', 'ArticleService', function($scope
               self.Article={id:null,Articlename:'',address:'',email:''};
               $scope.myForm.$setPristine(); //reset Form
           };
+          
+          self.listArticlesByCategory = function(category){
+              ArticleService.listArticlesByCategory(category)
+                  .then(
+      					       function(d) {
+      						        self.Articles = d;
+      					       },
+            					function(errResponse){
+            						console.error('Error while fetching Currencies');
+            					}
+      			       );
+          };
+          
+          self.getDetailArticleById = function(id){
+              ArticleService.getDetailArticleById(id)
+                  .then(
+      					       function(d) {
+      						        self.Article = d;
+      					       },
+            					function(errResponse){
+            						console.error('Error while fetching Currencies');
+            					}
+      			       );
+          };
 
       }]);

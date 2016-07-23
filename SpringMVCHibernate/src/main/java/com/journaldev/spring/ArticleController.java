@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.journaldev.spring.model.Article;
 import com.journaldev.spring.service.ArticleService;
 
@@ -28,15 +31,7 @@ public class ArticleController {
 		this.articleService = ar;
 	}
 
-	//-------------------Retrieve All Users--------------------------------------------------------
-//    @RequestMapping(value = "/load", method = RequestMethod.GET)
-//    public List<Article> listAllArticle() {
-//        List<Article> articles = articleService.listArticle();
-//        return articles;
-//    }
-	
-	 //-------------------Retrieve All Users--------------------------------------------------------
-    
+	//Using ResponseEntity
     @RequestMapping(value = "/load", method = RequestMethod.GET)
     public ResponseEntity<List<Article>> listAllUsers() {
         List<Article> articles = articleService.listArticle();
@@ -46,27 +41,6 @@ public class ArticleController {
         return new ResponseEntity<List<Article>>(articles, HttpStatus.OK);
     }
     
-//    @RequestMapping(value = "/load", method = RequestMethod.GET)
-//    public @ResponseBody String find() {
-//        return articleService.listArticle().toString();
-//    }
-	
-	@RequestMapping(value = "/articles", method = RequestMethod.GET)
-	public String listArticle(Model model) {
-		model.addAttribute("article", new Article());
-		model.addAttribute("listArticle", this.articleService.listArticle());
-		return "index"; // name of jsp file
-	}
-
-	@RequestMapping(value = "/articles/{category}", method = RequestMethod.GET)
-	public String listArticleByCategory(
-			@PathVariable("category") String category, Model model) {
-		model.addAttribute("article", new Article());
-		model.addAttribute("listArticle",
-				this.articleService.listArticleByCategory(category));
-		return "index"; // name of jsp file
-	}
-
 	// For add and update person both
 	@RequestMapping(value = "/articles/add", method = RequestMethod.POST)
 	public String addarticle(@ModelAttribute("article") Article p) {
@@ -98,9 +72,23 @@ public class ArticleController {
 		return "index"; // name of jsp file
 	}
 
-	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
-	public String getDetailArticelById(@PathVariable("id") int id, Model model) {
-		model.addAttribute("article",  this.articleService.getArticleById(id));
-		return "detail_article"; // name of jsp file
-	}
+	//Using ResponseEntity
+    @RequestMapping(value = "/articleBy/{category}", method = RequestMethod.GET)
+    public ResponseEntity<List<Article>> listArticleByCategory(@PathVariable("category") String category) {
+        List<Article> articles = articleService.listArticleByCategory(category);
+        if(articles.isEmpty()){
+            return new ResponseEntity<List<Article>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<List<Article>>(articles, HttpStatus.OK);
+    }
+    
+    //Using ResponseEntity
+    @RequestMapping(value = "/detailBy/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Article> getDetailArticleById(@PathVariable("id") int id) {
+        Article article = articleService.getArticleById(id);
+        if(article.getId()<0){
+            return new ResponseEntity<Article>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<Article>(article, HttpStatus.OK);
+    }
 }

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
- <%@ page language="java" contentType="text/html; charset=UTF-8" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" %> 
 <html lang="en">
 
 <head>
@@ -46,8 +46,8 @@
 			<div class="col-md-7">
 				<div class="detail">
 					<span class="time"></span>
-					<div class="title">${article.title}</div>
-					<p class="detail_content">${article.content}</p>
+					<div class="title">{{article.title}}</div>
+					<p class="detail_content">{{article.content}}</p>
 				</div>
 			</div>
 			<div class="col-md-3"></div>
