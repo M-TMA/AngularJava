@@ -55,8 +55,8 @@
     p.quick-content {
         font-size: 11px;
     }
- .col-md-2 {
-    width: 191px;
+ .col-md-3 {
+    width: 230px;
     border: solid 1px #acb6bf;
     background-color: aliceblue;
     margin-left: 2px;
@@ -87,7 +87,7 @@
     top: 11px;
     opacity: 0;
     height: 155px;
-    width: 149px;
+        width: 190px;
     margin-left: 0px;
     transition: all ease 0.9s;
     
@@ -148,7 +148,7 @@
 			<!-- c:if test="${(loop.index+1) % 6==0}"-->
 				<div class="row">
 					<c:forEach items="${listArticle}" var="article">
-						<div class="col-md-2">
+						<div class="col-md-3">
 							<a href="<c:url value='/detail/${article.id}'/>" class="thumbnail"> <img
 							src="${article.img}"
 							alt="">
@@ -158,7 +158,7 @@
 							<div class="category">
 								<a href="#">${article.category}</a>
 							</div>
-							<span class="title"><a href="<c:url value='/articles/${article.id}'/>">${article.title}</a></span>
+							<span class="title"><a href="<c:url value='/detail/${article.id}'/>">${article.title}</a></span>
 							<p class="quick-content">${article.subContent}</p>
 						</div>
 					</c:forEach>
