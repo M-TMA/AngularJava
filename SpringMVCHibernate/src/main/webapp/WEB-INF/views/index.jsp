@@ -31,12 +31,13 @@
     body {
         background-color: cornsilk;
     }
-    span.date {
-        border: solid 1px;
-        background-color: cornflowerblue;
-        color: white;
-        font-size: 12px;
-    }
+   span.date {
+    border: solid 1px;
+    background-color: blanchedalmond;
+    color: #E000A4;
+    font-size: 12px;
+    margin-left: -10px;
+}
     .category {
         text-transform: uppercase;
         font-size: 11px;
@@ -52,9 +53,10 @@
         border: solid 1px #acb6bf;
         background-color: aliceblue;
     }
-    p.quick-content {
-        font-size: 11px;
-    }
+  p.quick-content {
+    font-size: 11px;
+    margin-left: -9px;
+}
  .col-md-3 {
     width: 230px;
     border: solid 1px #acb6bf;
@@ -70,27 +72,27 @@
     text-transform: uppercase;
     }
     
-    .thumbnail a > img, .thumbnail > img {
+ .thumbnail a > img, .thumbnail > img {
     margin-right: auto;
     margin-left: auto;
-	height: 154px;
+    height: 154px;
+    width: 300px;
 }
-
  .thumbnail:hover .mauvang {
 	opacity:0.4;
-	top:11px;
+	top:0px;
 }
 
 .mauvang {
     background-color: yellow;
     position: absolute;
-    top: 11px;
+    top: 0px;
     opacity: 0;
-    height: 155px;
-        width: 190px;
+    height: 152px;
+    width: 211px;
     margin-left: 0px;
+        margin-top: 10px;
     transition: all ease 0.9s;
-    
 }
 .jumbotron {
     padding-right: 60px;
@@ -119,9 +121,14 @@
     -webkit-transition: border .2s ease-in-out;
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
-    margin-top: 7px;
+    margin-top: 4px;
+    width: 220px;
+    margin-left: -11px;
 }
-
+.title {
+    margin-top: 7px;
+    margin-left: -9px;
+}
 </style>
 </head>
 
@@ -158,7 +165,7 @@
 							<div class="category">
 								<a href="#">${article.category}</a>
 							</div>
-							<span class="title"><a href="<c:url value='/detail/${article.id}'/>">${article.title}</a></span>
+							<div class="title"><a href="<c:url value='/detail/${article.id}'/>">${article.title}</a></div>
 							<p class="quick-content">${article.subContent}</p>
 						</div>
 					</c:forEach>
