@@ -125,7 +125,7 @@ p.quick-content {
 }
 
 .row {
-	margin-left: 101px;
+	margin-left: 159px;
 }
 
 .col-md-3.ng-scope {
@@ -138,6 +138,61 @@ p.quick-content {
 	margin-left: 10px;
 	padding: 1px 14px 1px 14px;
 	border-radius: 6px;
-	height: 323px;
-	margin-bottom: 10px;
+	height: 326px;
+}
+
+.row.center.ng-scope {
+	margin-left: 260px;
+	margin-bottom: 18px;
+}
+
+.left {
+	width: 343px;
+	background-color: white;
+	height: auto;
+	position: absolute;
+	top: 69px;
+	left: 9px;
+	border-radius: 5px;
+}
+
+.content-left-title {
+	font-size: 15px;
+	border-bottom: solid 1px whitesmoke;
+}
+
+ul.title-group.ng-scope {
+	margin-left: -21px;
+}
+
+.content-header {
+	height: 301px;
+	background-color: white;
+	border-radius: 6px;
+	width: 696px;
+	margin-left: 271px;
+	margin-bottom: 19px;
+}
+
+.content-header img.thumbnail {
+	margin-left: 1px;
+	width: 445px;
+}
+
+.content-header-right .title {
+	margin-left: 457px;
+	width: 230px;
+	margin-top: -333px;
+}
+
+.content-header-right .title a.ng-binding {
+	color: #A00707;
+	font-size: 20px;
+}
+
+.sub-content.ng-binding {
+	width: 100px;
+	height: 100px;
+	text-align: justify;
+	margin-left: 458px;
 }

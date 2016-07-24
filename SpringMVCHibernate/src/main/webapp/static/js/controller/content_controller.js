@@ -4,4 +4,6 @@ App.controller('ContentController', [ 'async', '$scope', 'ArticleService',
 			debugger;
 			var self = this;
 			self.Articles = async;
+			self.firstArticle = async[0];
+
 		} ]);
