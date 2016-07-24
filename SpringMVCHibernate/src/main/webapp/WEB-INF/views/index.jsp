@@ -6,11 +6,12 @@
  
 <html lang="en">
 <head>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://code.angularjs.org/1.4.9/angular.min.js"></script>
 <script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
 <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.0.js"></script>
@@ -35,11 +36,11 @@
 			</div>
 		</nav>
 	</div>
-	<div class="content">
+	<div class="content" ng-hide="hideit">
 		<div class="container">
 				<div class="row">
 					<div class="col-md-3" ng-repeat="article in ar.Articles">
-							<a href="" class="thumbnail"> 
+							<a href="#/detail/{{article.id}}" class="thumbnail"> 
 							<img ng-src="{{article.img}}" alt="">
 							<div class = "mauvang"> </div>
 							</a>
@@ -53,11 +54,14 @@
 				</div>
 		</div>
 	</div>
+	<div ng-view></div>
+	
 	<div class="footer"></div>
 
 </body>
 	  <link type="text/css" rel="stylesheet" href="<c:url value='/static/css/style.css' />" />
   	  <script src="<c:url value='/static/js/app.js' />"></script>
       <script src="<c:url value='/static/js/service/article_service.js' />"></script>
+      <script src="<c:url value='/static/js/controller/detail_article_controller.js' />"></script>
       <script src="<c:url value='/static/js/controller/article_controller.js' />"></script>
 </html>

@@ -1,5 +1,4 @@
 'use strict';
-
 App.controller('ArticleController', ['$scope', 'ArticleService', function($scope, ArticleService) {
           var self = this;
           self.Article={id:null,Articlename:'',address:'',email:''};
@@ -96,16 +95,6 @@ App.controller('ArticleController', ['$scope', 'ArticleService', function($scope
       			       );
           };
           
-          self.getDetailArticleById = function(id){
-              ArticleService.getDetailArticleById(id)
-                  .then(
-      					       function(d) {
-      						        self.Article = d;
-      					       },
-            					function(errResponse){
-            						console.error('Error while fetching Currencies');
-            					}
-      			       );
-          };
+          
 
       }]);

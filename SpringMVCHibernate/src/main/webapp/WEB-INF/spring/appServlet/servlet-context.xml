@@ -26,6 +26,8 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/static/**" location="/static/" />
+	<resources mapping="/views/**" location="/views/" />
+	
 	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
