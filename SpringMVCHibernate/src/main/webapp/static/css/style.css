@@ -122,3 +122,15 @@ p.quick-content {
 	margin-top: 7px;
 	margin-left: -9px;
 }
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.container {
+    margin-top: 67px;
+}

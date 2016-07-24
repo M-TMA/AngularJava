@@ -15,7 +15,7 @@
 	border-bottom: solid 1px whitesmoke;
 }
 
-p.detail_content.ng-binding {
+.detail_content.ng-binding {
 	width: 617px;
 	margin-top: 12px;
 	margin-left: -7px;
@@ -26,6 +26,12 @@ p.detail_content.ng-binding {
 	width: 600px;
 	height: 550px;
 }
+
+.knd-content img {
+	vertical-align: middle;
+	width: 613px;
+	border-radius: 5px;
+}
 </style>
 <div class="container">
 	<div class="row">
@@ -34,7 +40,8 @@ p.detail_content.ng-binding {
 				<img class="thumbnal" ng-src="{{detailArticleCtrl.article.img}}" />
 				<span class="time"></span>
 				<div class="title">{{detailArticleCtrl.article.title}}</div>
-				<p class="detail_content">{{detailArticleCtrl.article.content}}"</p>
+				<div class="detail_content"
+					ng-bind-html="detailArticleCtrl.trustedContent"></div>
 			</div>
 		</div>
 	</div>

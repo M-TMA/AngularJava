@@ -1,5 +1,5 @@
 'use strict';
-var App = angular.module('myApp', ['ngRoute']);
+var App = angular.module('myApp', ['ngRoute','ngSanitize']);
 
 App.config(['$routeProvider', function($routeProvider) {
 	debugger;
@@ -11,9 +11,6 @@ App.config(['$routeProvider', function($routeProvider) {
                 return ArticleService.getDetailArticleById($route.current.params.id);
            	}]
         }
-	}).when('/index', {
-		templateUrl : '/index',
-		controller : ''
 	}).when('/content', {
 		templateUrl : 'page/content',
 		controller : 'ContentController as ctCtrl',
