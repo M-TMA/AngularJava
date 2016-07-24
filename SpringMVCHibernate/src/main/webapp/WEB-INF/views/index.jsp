@@ -24,44 +24,25 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Báo Mới</a>
+					<a class="navbar-brand" href="#/content">Báo Mới</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active" ng-click="ar.fetchAllArticles()"><a href="">Home</a></li>
-					<li><a href="" ng-click="ar.listArticlesByCategory('Healthy')">Healthy</a></li>
-					<li><a href="" ng-click="ar.listArticlesByCategory('Knowledge Fam')">Knowledge Fam</a></li>
-					<li><a href="" ng-click="ar.listArticlesByCategory('World')">World</a></li>
-					<li><a href="" ng-click="ar.listArticlesByCategory('Asia Film')">Asia Film</a></li>
+					<li class="active"><a href="#/content">Home</a></li>
+					<li><a  href="#/content/Healthy" >Healthy</a></li>
+					<li><a  href="#/content/Knowledge Fam">Knowledge Fam</a></li>
+					<li><a href="#/content/World">World</a></li>
+					<li><a  href="#/content/Asia Film">Asia Film</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
-	<div class="content" ng-hide="hideit">
-		<div class="container">
-				<div class="row">
-					<div class="col-md-3" ng-repeat="article in ar.Articles">
-							<a href="#/detail/{{article.id}}" class="thumbnail"> 
-							<img ng-src="{{article.img}}" alt="">
-							<div class = "mauvang"> </div>
-							</a>
-							 <span class="date">{{article.time}}</span>
-							<div class="category">
-								<a href="#">{{article.category}}</a>
-							</div>
-							<div class="title"><a href="" ng-click="ar.getDetailArticleById(article.id)">{{article.title}}</a></div>
-							<p class="quick-content">{{article.subContent}}</p>
-					</div>
-				</div>
-		</div>
-	</div>
 	<div ng-view></div>
-	
 	<div class="footer"></div>
-
 </body>
 	  <link type="text/css" rel="stylesheet" href="<c:url value='/static/css/style.css' />" />
   	  <script src="<c:url value='/static/js/app.js' />"></script>
       <script src="<c:url value='/static/js/service/article_service.js' />"></script>
       <script src="<c:url value='/static/js/controller/detail_article_controller.js' />"></script>
+      <script src="<c:url value='/static/js/controller/content_controller.js' />"></script>
       <script src="<c:url value='/static/js/controller/article_controller.js' />"></script>
 </html>

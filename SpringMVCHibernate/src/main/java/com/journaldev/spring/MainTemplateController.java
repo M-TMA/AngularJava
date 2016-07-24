@@ -11,4 +11,9 @@ public class MainTemplateController {
 	public String getComputersTemplate() {
 		return "detail_article";
 	}
+	
+	@RequestMapping(value = "/content")
+	public String getContentPage() {
+		return "home";
+	}
 }
