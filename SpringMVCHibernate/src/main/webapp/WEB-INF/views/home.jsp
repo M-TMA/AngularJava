@@ -7,10 +7,10 @@
 					<div class="mauvang"></div>
 				</a> <span class="date">{{article.time}}</span>
 				<div class="category">
-					<a href="#">{{article.category}}</a>
+					<a href="#/content/{{article.category}}">{{article.category}}</a>
 				</div>
 				<div class="title">
-					<a href="" >{{article.title}}</a>
+					<a href="#/detail/{{article.id}}" >{{article.title}}</a>
 				</div>
 				<p class="quick-content">{{article.subContent}}</p>
 			</div>
