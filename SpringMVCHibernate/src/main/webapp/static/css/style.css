@@ -57,3 +57,23 @@ div#col-left {
     background-color: white;
     border-radius: 4px;
 }
+
+.title-content {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: -16px;
+    margin-bottom: 5px;
+    width: 610px;
+    height: auto;
+    padding: 5px 5px 5px 4px;
+}
+
+.title-content .title a {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.title-content .sub-content.ng-binding {
+    font-size: 13px;
+}

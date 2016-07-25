@@ -22,15 +22,15 @@
 	text-align: justify;
 }
 
-.detail img.thumbnal {
-	width: 600px;
-	height: 550px;
-}
-
 .knd-content img {
 	vertical-align: middle;
 	width: 613px;
 	border-radius: 5px;
+}
+
+.detail img.thumbnal {
+    width: 600px;
+    height: 408px;
 }
 </style>
 <div class="container">

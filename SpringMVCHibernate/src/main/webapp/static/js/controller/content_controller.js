@@ -9,5 +9,6 @@ App.controller('ContentController', [ 'async', '$scope', 'ArticleService',
 			self.arsHeaderRight.push(async[1]);
 			self.arsHeaderRight.push(async[2]);
 			self.arsHeaderRight.push(async[3]);
-			self.Articles.splice(0, 4);
+			self.Articles.splice(1, 3);
+			self.Articles.splice(0, 1);
 		} ]);

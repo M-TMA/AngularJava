@@ -13,10 +13,12 @@
 					<div class="col-md-9">
 						<a href="#/detail/{{ctCtrl.firstArticle.id}}"><img
 							class="thumbnail" ng-src="{{ctCtrl.firstArticle.img}}" /></a>
-						<div class="title">
-							<a href="#/detail/{{ctCtrl.firstArticle.id}}">{{ctCtrl.firstArticle.title}}</a>
+						<div class="title-content">
+							<div class="title">
+								<a href="#/detail/{{ctCtrl.firstArticle.id}}">{{ctCtrl.firstArticle.title}}</a>
+							</div>
+							<div class="sub-content">{{ctCtrl.firstArticle.subContent}}</div>
 						</div>
-						<div class="sub-content">{{ctCtrl.firstArticle.subContent}}</div>
 					</div>
 					<div class="col-md-3">
 						<div class="row" ng-repeat="article in ctCtrl.arsHeaderRight">
