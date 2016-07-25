@@ -36,7 +36,7 @@
 			</div>
 		</nav>
 	</div>
-	<div ng-view></div>
+	<div id = "view" ng-view></div>
 	<div class="footer"></div>
 </body>
 	  <link type="text/css" rel="stylesheet" href="<c:url value='/static/css/style.css' />" />
