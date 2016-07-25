@@ -1,0 +1,13 @@
+img#image-header-right {
+	width: 200px;
+	height: 100px;
+	margin-left: 30px;
+	margin-bottom: 8px;
+}
+
+#title-header-right {
+    margin-left: 33px;
+    margin-top: -9px;
+    font-size: 13px;
+    margin-bottom: 11px;
+}
