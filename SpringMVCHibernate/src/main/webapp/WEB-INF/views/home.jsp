@@ -9,17 +9,20 @@
 				</ul>
 			</div>
 			<div id="col-right" class="col-md-9">
-				<div id="row-header" class="row">
+				<div id="row-header first-article" class="row">
 					<div class="col-md-9">
-						<img class="thumbnail" ng-src="{{ctCtrl.firstArticle.img}}" />
+						<a href="#/detail/{{ctCtrl.firstArticle.id}}"><img
+							class="thumbnail" ng-src="{{ctCtrl.firstArticle.img}}" /></a>
 						<div class="title">
-							<a href="#/detail/{{article.id}}">{{ctCtrl.firstArticle.title}}</a>
+							<a href="#/detail/{{ctCtrl.firstArticle.id}}">{{ctCtrl.firstArticle.title}}</a>
 						</div>
 						<div class="sub-content">{{ctCtrl.firstArticle.subContent}}</div>
 					</div>
 					<div class="col-md-3">
 						<div class="row" ng-repeat="article in ctCtrl.arsHeaderRight">
-							<img id="image-header-right" class="thumbnail" ng-src="{{article.img}}" />
+							<a href="#/detail/{{article.id}}"><img
+								id="image-header-right" class="thumbnail"
+								ng-src="{{article.img}}" /></a>
 							<div id="title-header-right">
 								<a href="#/detail/{{article.id}}">{{article.title}}</a>
 							</div>
@@ -30,19 +33,22 @@
 					<div class="col-md-12">
 						<div class="row" ng-repeat="article in ctCtrl.Articles"
 							ng-if="$index % 4 == 0">
-							<div class="col-md-3"
+							<div id="article-block" class="col-md-3"
 								ng-repeat="article in ctCtrl.Articles.slice($index, ($index+4 > ctCtrl.Articles.length ? ctCtrl.Articles.length : $index+4))">
 								<a href="#/detail/{{article.id}}" class="thumbnail"> <img
 									ng-src="{{article.img}}" alt="">
 									<div class="mauvang"></div>
-								</a> <span class="date">{{article.time}}</span>
-								<div class="category">
-									<a href="#/content/{{article.category}}">{{article.category}}</a>
+								</a>
+								<div class="article-block-content">
+									<span class="date">{{article.time}}</span>
+									<div class="category">
+										<a href="#/content/{{article.category}}">{{article.category}}</a>
+									</div>
+									<div class="title">
+										<a href="#/detail/{{article.id}}">{{article.title}}</a>
+									</div>
+									<p class="quick-content">{{article.subContent}}</p>
 								</div>
-								<div class="title">
-									<a href="#/detail/{{article.id}}">{{article.title}}</a>
-								</div>
-								<p class="quick-content">{{article.subContent}}</p>
 							</div>
 						</div>
 					</div>
