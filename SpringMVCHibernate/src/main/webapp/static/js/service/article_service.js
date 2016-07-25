@@ -4,7 +4,7 @@ App.factory('ArticleService', ['$http', '$q', function($http, $q){
 debugger;
 	return {
 			fetchAllArticles: function() {
-					return $http.get('http://192.168.1.7:8080/SpringMVCHibernate/load')
+					return $http.get('http://192.168.92.105:8080/SpringMVCHibernate/load')
 							.then(
 									function(response){
 										return response.data;
@@ -17,7 +17,7 @@ debugger;
 			},
 		    
 		    createArticle: function(Article){
-					return $http.post('http://192.168.1.7:8080/SpringMVCHibernate/Article/', Article)
+					return $http.post('http://192.168.92.105:8080/SpringMVCHibernate/Article/', Article)
 							.then(
 									function(response){
 										return response.data;
@@ -30,7 +30,7 @@ debugger;
 		    },
 		    
 		    updateArticle: function(Article, id){
-					return $http.put('http://192.168.1.7:8080/SpringMVCHibernate/Article/'+id, Article)
+					return $http.put('http://192.168.92.105:8080/SpringMVCHibernate/Article/'+id, Article)
 							.then(
 									function(response){
 										return response.data;
@@ -43,7 +43,7 @@ debugger;
 			},
 		    
 			deleteArticle: function(id){
-					return $http.delete('http://192.168.1.7:8080/SpringMVCHibernate/Article/'+id)
+					return $http.delete('http://192.168.92.105:8080/SpringMVCHibernate/Article/'+id)
 							.then(
 									function(response){
 										return response.data;
@@ -56,7 +56,7 @@ debugger;
 			},
 			
 			listArticlesByCategory: function(category){
-				return $http.get('http://192.168.1.7:8080/SpringMVCHibernate/articleBy/'+category)
+				return $http.get('http://192.168.92.105:8080/SpringMVCHibernate/articleBy/'+category)
 						.then(
 								function(response){
 									return response.data;
@@ -68,7 +68,7 @@ debugger;
 						);
 		},
 		getDetailArticleById: function(id){
-			return $http.get('http://192.168.1.7:8080/SpringMVCHibernate/detailBy/'+id)
+			return $http.get('http://192.168.92.105:8080/SpringMVCHibernate/detailBy/'+id)
 					.then(
 							function(response){
 								return response.data;

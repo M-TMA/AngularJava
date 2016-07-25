@@ -5,5 +5,5 @@ App.controller('ContentController', [ 'async', '$scope', 'ArticleService',
 			var self = this;
 			self.Articles = async;
 			self.firstArticle = async[0];
-
+			self.Articles.splice(0,1);
 		} ]);
