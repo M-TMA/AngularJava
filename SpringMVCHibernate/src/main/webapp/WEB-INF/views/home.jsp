@@ -9,7 +9,7 @@
 				</ul>
 			</div>
 			<div id="col-right" class="col-md-9">
-				<div id="row-header first-article" class="row">
+				<div id="first-article" class="row">
 					<div class="col-md-9">
 						<a href="#/detail/{{ctCtrl.firstArticle.id}}"><img
 							class="thumbnail" ng-src="{{ctCtrl.firstArticle.img}}" /></a>
@@ -32,11 +32,11 @@
 					</div>
 				</div>
 				<div id="row-content" class="row">
-					<div class="col-md-12">
+					<div class="col-md-9">
 						<div class="row" ng-repeat="article in ctCtrl.Articles"
-							ng-if="$index % 4 == 0">
+							ng-if="$index % 3 == 0">
 							<div id="article-block" class="col-md-3"
-								ng-repeat="article in ctCtrl.Articles.slice($index, ($index+4 > ctCtrl.Articles.length ? ctCtrl.Articles.length : $index+4))">
+								ng-repeat="article in ctCtrl.Articles.slice($index, ($index+3 > ctCtrl.Articles.length ? ctCtrl.Articles.length : $index+3))">
 								<a href="#/detail/{{article.id}}" class="thumbnail"> <img
 									ng-src="{{article.img}}" alt="">
 									<div class="mauvang"></div>

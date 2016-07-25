@@ -17,63 +17,79 @@ body {
 }
 
 .article-block-content {
-    background-color: white;
-    margin-top: -17px;
-    border-radius: 6px;
-    padding: 1px 1px 1px 4px;
+	background-color: white;
+	margin-top: -17px;
+	border-radius: 6px;
+	padding: 1px 1px 1px 4px;
 }
 
 span.date.ng-binding {
-    background-color: cornflowerblue;
-    border: solid 1px black;
-    border-radius: 2px;
-    color: white;
-    font-size: 11px;
+	background-color: cornflowerblue;
+	border: solid 1px black;
+	border-radius: 2px;
+	color: white;
+	font-size: 11px;
 }
 
 .article-block-content .category {
-    font-size: 11px;
-    margin-left: 62px;
-    margin-top: -15px;
+	font-size: 11px;
+	margin-left: 62px;
+	margin-top: -15px;
 }
 
 .article-block-content .category a {
-    color: coral;
+	color: coral;
 }
 
 .article-block-content .title a {
-    text-transform: uppercase;
-    color: darkturquoise;
-    font-size: 12px;
-    font-weight: bold;
+	text-transform: uppercase;
+	color: darkturquoise;
+	font-size: 12px;
+	font-weight: bold;
 }
 
 .article-block-content .quick-content {
-    font-size: 13px;
-    text-align: justify;
+	font-size: 13px;
+	text-align: justify;
 }
 
 div#col-left {
-    background-color: white;
-    border-radius: 4px;
+	background-color: white;
+	border-radius: 4px;
 }
 
 .title-content {
-    background-color: white;
-    border-radius: 5px;
-    margin-top: -16px;
-    margin-bottom: 5px;
-    width: 610px;
-    height: auto;
-    padding: 5px 5px 5px 4px;
+	background-color: white;
+	border-radius: 5px;
+	margin-top: -16px;
+	margin-bottom: 5px;
+	width: 660px;
+	height: auto;
+	padding: 4px 1px 1px 4px;
 }
 
 .title-content .title a {
-    font-size: 17px;
-    text-transform: uppercase;
-    font-weight: bold;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 .title-content .sub-content.ng-binding {
-    font-size: 13px;
+	font-size: 13px;
+}
+
+#first-article .col-md-9 a img.thumbnail {
+	width: 660px;
+}
+
+#row-content .col-md-9 {
+	width: 691px;
+}
+
+div#article-block {
+	width: 210px;
+	padding: 0px;
+	margin-left: 15px;
+	margin-bottom: 7px;
+	border-bottom: solid 1px #489c81;
 }
